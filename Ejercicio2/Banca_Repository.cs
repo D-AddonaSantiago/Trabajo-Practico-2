@@ -14,30 +14,31 @@ namespace Ejercicio2
         static public Banca Obtener(string pNumero)
         {
             int i = 0;
+            bool sale = false;
             if (conjBanca == null)
             {
                 return null;
             }
             else
             {
-                while (conjBanca.Length <= i && pNumero != conjBanca[i].NumeroBanca)
+                while (conjBanca.Length >= i && conjBanca[i] != null && !sale)
                 {
-                    i++;
+                    if (conjBanca[i].NumeroBanca == pNumero)
+                        sale = true;
+                    else
+                        i++;
                 }
-                if (pNumero == conjBanca[i].NumeroBanca)
-                {
+                if (sale == true)
                     return conjBanca[i];
-                }
                 else
-                {
                     return null;
-                }
             }
             
         }
 
         static public void Agregar(Banca pBanca)
         {
+
             if (conjBanca == null)
             {
                 conjBanca = new Banca[100];
@@ -45,7 +46,12 @@ namespace Ejercicio2
             }
             else
             {
-                conjBanca.Append(pBanca);
+                int i = 0;
+                while (conjBanca[i] != null)
+                {
+                    i++;
+                }
+                conjBanca[i] = pBanca;
             }
         }
 
