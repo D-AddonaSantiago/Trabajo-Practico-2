@@ -6,37 +6,53 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2
 {
-    public class Banca_Repository
+    static public class Banca_Repository
     {
-        private static Banca[] conjBanca = { };
-        private static double DolarActual = 97.71;
+        static private Banca[] conjBanca;
+        static private double iDolarActual = 97.71;
 
-        public static Banca Obtener(string pNumero)
+        static public Banca Obtener(string pNumero)
         {
             int i = 0;
-            while (pNumero != conjBanca[i].NumeroBanca)
-            {
-                i++;
-            }
-            if (pNumero == conjBanca[i].NumeroBanca)
-            {
-                return conjBanca[i];
-            }
-            else
+            if (conjBanca == null)
             {
                 return null;
             }
+            else
+            {
+                while (conjBanca.Length <= i && pNumero != conjBanca[i].NumeroBanca)
+                {
+                    i++;
+                }
+                if (pNumero == conjBanca[i].NumeroBanca)
+                {
+                    return conjBanca[i];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            
         }
 
-        public static void Agregar(Banca pBanca)
+        static public void Agregar(Banca pBanca)
         {
-            conjBanca[conjBanca.Length + 1] = pBanca;
+            if (conjBanca == null)
+            {
+                conjBanca = new Banca[100];
+                conjBanca[0] = pBanca;
+            }
+            else
+            {
+                conjBanca.Append(pBanca);
+            }
         }
 
-        public static DolarActual
+        static public double DolarActual
         {
-            get{return this.DolarActual}
-            set{}
+            get{ return iDolarActual; }
+            set{ iDolarActual = value; }
         }
     }
 }

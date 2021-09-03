@@ -10,10 +10,11 @@ namespace Ejercicio2
             while(op != 0)
             {
                 Console.Clear();
-                Console.Write($"        - Operaciones Bancarias -        \n" +
-                    $" 1- Crear cuenta bancaria \n" +
-                    $" 2- Gestionar cuenta bancaria \n" +
-                    $" 0- Salir \n");
+                Console.Write($"        - OPERACIONES BANCARIAS -        \n" +
+                              $"=========================================\n" +
+                              $" 1- Crear cuenta bancaria \n" +
+                              $" 2- Gestionar cuenta bancaria \n" +
+                              $" 0- Salir \n\n");
                 op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
@@ -24,7 +25,7 @@ namespace Ejercicio2
                         }
                     case 2:
                         {
-                            //GestionCuentaPantalla();
+                            GestionCuenta_Pantalla.IngresarBancaPantalla();
                             break;
                         }
                     default:
