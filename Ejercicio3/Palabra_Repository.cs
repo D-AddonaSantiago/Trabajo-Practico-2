@@ -10,9 +10,9 @@ namespace Ejercicio3
     {
         private Palabra[] conjPalabras;
 
-        public string[] palabra = new string[] { "Adaptación", "Agudo", "Antibiótico", "Artritis", "Ataxia", "Atrofia","Circulación","Cirugía","Conducta","Contractura",
-                                                            "Crónico", "Cuadriplejia", "Choquezuela", "Diagnóstico", "Diplejía", "Distrofia","Dosis","Espasticidad","Espina","Estimulación",
-                                                            "Evaluación", "Físico", "Fisioterapeuta", "Hemiplejia", "Herencia", "Inflamación","Paraplejía","Prótesis","Tóxico","Virus"};
+        public string[] palabra = new string[] { "Adaptacion", "Agudo", "Antibiotico", "Artritis", "Ataxia", "Atrofia","Circulacion","Cirugía","Conducta","Contractura",
+                                                            "Cronico", "Cuadriplejia", "Choquezuela", "Diagnostico", "Diplejia", "Distrofia","Dosis","Espasticidad","Espina","Estimulacion",
+                                                            "Evaluacion", "Fisico", "Fisioterapeuta", "Hemiplejia", "Herencia", "Inflamacion","Paraplejia","Protesis","Toxico","Virus"};
 
         public Palabra[] Inicio(string[] pCadenas)
         {
