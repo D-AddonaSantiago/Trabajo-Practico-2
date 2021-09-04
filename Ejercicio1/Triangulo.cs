@@ -9,6 +9,7 @@ namespace Ejercicio1
     public class Triangulo
     {
         private Punto p1, p2, p3;           //Componentes de un triangulo
+        double iA, iB, iC;
 
         public Triangulo(Punto pt1, Punto pt2, Punto pt3)           //Contructor de un Triangulo
         {
@@ -34,16 +35,16 @@ namespace Ejercicio1
 
         public double GetArea()         //Utilizando la formula de Heron a partir de sus lados podemos calcular su Area
         {
-            double L1 = this.p1.DistanciaHasta(this.p2);
-            double L2 = this.p2.DistanciaHasta(this.p3);
-            double L3 = this.p3.DistanciaHasta(this.p1);
-            double semiPer = ((L1 + L2 + L3) / 2);
-            return (Math.Sqrt(semiPer * (semiPer - L1) * (semiPer - L2) * (semiPer - L3)));
+            double semiPer = (GetPerimetro() / 2);
+            return Math.Sqrt(semiPer * (semiPer - iA) * (semiPer - iB) * (semiPer - iC));
         }
 
         public double GetPerimetro()
         {
-            return (this.p1.DistanciaHasta(this.p2) + (this.p2.DistanciaHasta(this.p3)) + (this.p3.DistanciaHasta(this.p1)));
+            iA = this.p1.DistanciaHasta(this.p2);
+            iB = this.p2.DistanciaHasta(this.p3);
+            iC = this.p3.DistanciaHasta(this.p1);
+            return (iA + iB + iC);
         }
     }
 }

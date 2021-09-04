@@ -28,7 +28,9 @@ namespace Ejercicio1
 
         public double DistanciaHasta(Punto p)          //Obtencion de la distancia entre 2 puntos
         {
-            return Math.Round(Math.Sqrt(Math.Pow(this.GetX() - p.GetX(), 2) + Math.Pow(this.GetY() - p.GetY(), 2)));
+            double difx = this.iX - p.iX;
+            double dify = this.iY - p.iY;
+            return Math.Sqrt(Math.Pow(difx, 2) + Math.Pow(dify, 2));
         }
     }
 }
