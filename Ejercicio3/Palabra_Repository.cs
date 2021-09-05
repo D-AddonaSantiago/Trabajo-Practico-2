@@ -8,7 +8,7 @@ namespace Ejercicio3
 {
     class Palabra_Repository
     {
-        private Palabra[] conjPalabras;
+        private Palabra[] palabras;
 
         public string[] palabra = new string[] { "Adaptacion", "Agudo", "Antibiotico", "Artritis", "Ataxia", "Atrofia","Circulacion","Cirugía","Conducta","Contractura",
                                                             "Cronico", "Cuadriplejia", "Choquezuela", "Diagnostico", "Diplejia", "Distrofia","Dosis","Espasticidad","Espina","Estimulacion",
@@ -17,18 +17,18 @@ namespace Ejercicio3
         public Palabra[] Inicio(string[] pCadenas)
         {
             int i = 0;
-            conjPalabras = new Palabra[30];
+            palabras = new Palabra[30]; // Te lo marcaba como mal bro 
             foreach (string palabra in pCadenas)
             {
-                conjPalabras[i] = new Palabra(i, palabra);
+                palabras[i] = new Palabra(i, palabra);
                 i++;
             }
-            return conjPalabras;
+            return palabras;
         }
 
         public Palabra Obtener(int pID)
         {
-            return conjPalabras[pID];
+            return palabras[pID];
         }
     }
 }
