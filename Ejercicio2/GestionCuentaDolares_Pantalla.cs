@@ -10,8 +10,8 @@ namespace Ejercicio2
     {
         static public void CtaDolaresPant(string tDNI)
         {
-            bool salir = false;
-            while (!salir)
+            int op = 1;
+            while (op != 0)
             {
                 Console.Clear();
                 Console.Write($"         - CUENTA DOLARES -        \n" +
@@ -21,36 +21,25 @@ namespace Ejercicio2
                               $" 3- Debitar\n" +
                               $" 4- Comprar Pesos\n" +
                               $" 0- Salir\n\n");
-                int op = int.Parse(Console.ReadLine());
+                op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
-                    case 1:
-                        {
-                            ConsultarCtaDolares(tDNI);
-                            break;
-                        }
-                    case 2:
-                        {
-                            AcreditarCtaDolares(tDNI);
-                            break;
-                        }
-                    case 3:
-                        {
-                            DebitarCtaDolares(tDNI);
-                            break;
-                        }
-                    case 4:
-                        {
-                            CompraDePesos(tDNI);
-                            break;
-                        }
                     case 0:
-                        { 
-                            salir = true;
-                            return;
-                        }
-                    default:
                         break;
+                    case 1:
+                        ConsultarCtaDolares(tDNI);
+                        break;
+                    case 2:
+                        AcreditarCtaDolares(tDNI);
+                        break;
+                    case 3:
+                        DebitarCtaDolares(tDNI);
+                        break;
+                    case 4:
+                        CompraDePesos(tDNI);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
         }

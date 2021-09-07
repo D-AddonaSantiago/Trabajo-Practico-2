@@ -29,8 +29,8 @@ namespace Ejercicio2
 
         static public void GestionCuentaPantalla(string tDNI)
         {
-            bool salir = false;
-            while (!salir)
+            int op = 1;
+            while (op != 0)
             {
                 Console.Clear();
                 Console.Write($"        - GESTIONAR CUENTA -        \n" +
@@ -38,30 +38,21 @@ namespace Ejercicio2
                               $" 1- Cuenta en Pesos \n" +
                               $" 2- Cuenta en Dolares \n" +
                               $" 0- Salir\n\n");
-                int op = int.Parse(Console.ReadLine());
-
+                op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
-                    case 1:
-                        {
-                            GestionCuentaPesos_Pantalla.CtaPesosPant(tDNI);
-                            break;
-                        }
-                    case 2:
-                        {
-                            GestionCuentaDolares_Pantalla.CtaDolaresPant(tDNI);
-                            break;
-                        }
                     case 0:
-                        {
-                            salir = true;
-                            return;
-                        }
-                    default:
                         break;
+                    case 1:
+                        GestionCuentaPesos_Pantalla.CtaPesosPant(tDNI);
+                        break;
+                    case 2:
+                        GestionCuentaDolares_Pantalla.CtaDolaresPant(tDNI);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-            
         }
     }
 }

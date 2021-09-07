@@ -15,21 +15,29 @@ namespace Ejercicio2
                               $" 1- Crear cuenta bancaria \n" +
                               $" 2- Gestionar cuenta bancaria \n" +
                               $" 0- Salir \n\n");
-                op = int.Parse(Console.ReadLine());
-                switch (op)
+                try
                 {
-                    case 1:
-                        {
+                    op = int.Parse(Console.ReadLine());
+                    switch (op)
+                    {
+                        case 0:
+                            break;
+                        case 1:
                             CrearCuenta_Pantalla.CreaCuentaPantalla();
                             break;
-                        }
-                    case 2:
-                        {
+                        case 2:
                             GestionCuenta_Pantalla.IngresarBancaPantalla();
                             break;
-                        }
-                    default:
-                        break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(" ----------------------------------------------------");
+                    Console.WriteLine($" {ex.Message}");
+                    Console.WriteLine(" ----------------------------------------------------");
+                    Console.ReadKey();
                 }
             }
         }

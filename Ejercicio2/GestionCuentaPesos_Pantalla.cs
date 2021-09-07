@@ -10,8 +10,8 @@ namespace Ejercicio2
     {
         static public void CtaPesosPant(string tDNI)
         {
-            bool salir = false;
-            while (!salir)
+            int op = 1;
+            while (op != 0)
             {
                 Console.Clear();
                 Console.Write($"         - CUENTA PESOS -        \n" +
@@ -21,39 +21,27 @@ namespace Ejercicio2
                               $" 3- Debitar\n" +
                               $" 4- Comprar Dolares\n" +
                               $" 0- Salir\n\n");
-                int op = int.Parse(Console.ReadLine());
+                op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
-                    case 1:
-                        {
-                            ConsultarCtaPesos(tDNI);
-                            break;
-                        }
-                    case 2:
-                        {
-                            AcreditarCtaPesos(tDNI);
-                            break;
-                        }
-                    case 3:
-                        {
-                            DebitarCtaPesos(tDNI);
-                            break;
-                        }
-                    case 4:
-                        {
-                            ComprarDolares(tDNI);
-                            break;
-                        }
                     case 0:
-                        {
-                            salir = true;
-                            return;
-                        }
-                    default:
                         break;
+                    case 1:
+                        ConsultarCtaPesos(tDNI);
+                        break;
+                    case 2:
+                        AcreditarCtaPesos(tDNI);
+                        break;
+                    case 3:
+                        DebitarCtaPesos(tDNI);
+                        break;
+                    case 4:
+                        ComprarDolares(tDNI);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-            
         }
 
         static public void ConsultarCtaPesos(string tDNI)
