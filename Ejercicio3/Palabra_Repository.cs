@@ -8,27 +8,18 @@ namespace Ejercicio3
 {
     class Palabra_Repository
     {
-        private Palabra[] conjPalabras;
-
-        public string[] palabra = new string[] { "Adaptacion", "Agudo", "Antibiotico", "Artritis", "Ataxia", "Atrofia","Circulacion","Cirugía","Conducta","Contractura",
-                                                            "Cronico", "Cuadriplejia", "Choquezuela", "Diagnostico", "Diplejia", "Distrofia","Dosis","Espasticidad","Espina","Estimulacion",
-                                                            "Evaluacion", "Fisico", "Fisioterapeuta", "Hemiplejia", "Herencia", "Inflamacion","Paraplejia","Protesis","Toxico","Virus"};
-
-        public Palabra[] Inicio(string[] pCadenas)
+        static Palabra nPalabra = new Palabra();
+        static public string Obtener(int pPos)
         {
-            int i = 0;
-            conjPalabras = new Palabra[30];
-            foreach (string palabra in pCadenas)
-            {
-                conjPalabras[i] = new Palabra(i, palabra);
-                i++;
-            }
-            return conjPalabras;
+            return nPalabra.BaseDeDatos[pPos];
         }
 
-        public Palabra Obtener(int pID)
+        static public int CantPalabras()
         {
-            return conjPalabras[pID];
+            return nPalabra.BaseDeDatos.Length;
         }
+
+
+
     }
 }

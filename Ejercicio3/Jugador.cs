@@ -21,7 +21,6 @@ namespace Ejercicio3
         public string Nombre
         {
             get { return this.iNombre; }
-         //   set { this.iNombre = value; }
         }
         public int Ganadas
         {

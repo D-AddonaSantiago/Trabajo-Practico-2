@@ -8,7 +8,7 @@ namespace Ejercicio3
 {
     public class Partida
     {
-        private int iID, iError, iVida;
+        private int iError, iVida;
         private DateTime iFechaInicio;
         private DateTime? iHoraFin;
         private Palabra iPalabra;
@@ -16,17 +16,13 @@ namespace Ejercicio3
 
         public Partida(Palabra pPalabra, Jugador pJugador)
         {
-            this.iFechaInicio = DateTime.Now;
-            this.ijugador = pJugador;
-            this.iPalabra = pPalabra;
-            this.iVida = 10;
-            this.iError = 0;
-            this.iHoraFin = DateTime.Now;
+
+            new Partida(pPalabra, pJugador, 10); 
+
         }
 
-        public Partida(int pID, Palabra pPalabra, Jugador pJugador, int pVida)
+        public Partida(Palabra pPalabra, Jugador pJugador, int pVida)
         {
-            this.iID = pID;
             this.iFechaInicio = DateTime.Now;
             this.ijugador = pJugador;
             this.iPalabra = pPalabra;
@@ -47,11 +43,7 @@ namespace Ejercicio3
             }
         }
 
-        public int ID
-        {
-            get { return this.iID; }
-            set { this.iID = value; }
-        }
+   
 
         public int Errores
         {
@@ -61,13 +53,13 @@ namespace Ejercicio3
 
         public DateTime HoraFin
         {
-            get { return this.iHoraFin; }
+            get { return (DateTime)this.iHoraFin; }
             set { this.iHoraFin = value; }
         }
 
         public double Duracion()
         {
-            return (this.iHoraFin - this.iFechaInicio).TotalSeconds;
+            return ((DateTime)this.iHoraFin - this.iFechaInicio).TotalSeconds;
         }
 
     }

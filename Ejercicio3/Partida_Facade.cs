@@ -16,15 +16,11 @@ namespace Ejercicio3
 
         } 
 
-        private Palabra DevuelvePalabraAleatoria()
+        public char[] DevuelvePalabraAleatoria()
         {
             Random numero = new Random();
-            int numeroAleatorio = numero.Next(0, 29);
-
-            Palabra_Repository pRepos = new Palabra_Repository();
-            
-            return pRepos.Obtener(numeroAleatorio);
-          
+            int numeroAleatorio = numero.Next(0, Palabra_Repository.CantPalabras());
+            return Palabra_Repository.Obtener(numeroAleatorio).ToCharArray();
         }
     }
 }

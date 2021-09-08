@@ -8,38 +8,19 @@ namespace Ejercicio3
 {
     public class Palabra
     {
-        private int iID;
-        private string iCadena;
-        private char[] iArregloLetras;
-
-        public Palabra(int pID, string pCadena)
+        private string[] baseDeDatosDePalabras;
+         
+        public Palabra()
         {
-            this.iID = pID;
-            this.iCadena = pCadena;
-            this.iArregloLetras = Letras(pCadena);
+            this.baseDeDatosDePalabras = new string[] { "Adaptacion", "Agudo", "Antibiotico", "Artritis", "Ataxia", "Atrofia","Circulacion","Cirugía","Conducta","Contractura",
+                                                            "Cronico", "Cuadriplejia", "Choquezuela", "Diagnostico", "Diplejia", "Distrofia","Dosis","Espasticidad","Espina","Estimulacion",
+                                                            "Evaluacion", "Fisico", "Fisioterapeuta", "Hemiplejia", "Herencia", "Inflamacion","Paraplejia","Protesis","Toxico","Virus"};
+        } 
+        
+        public string[] BaseDeDatos
+        {
+            get { return this.baseDeDatosDePalabras; }
         }
 
-        public int ID
-        {
-            get { return this.iID; }
-          //  set { this.iID = value; }
-        }
-
-        public string Cadena
-        {
-            get { return this.iCadena; }
-            set { this.iCadena = value; }
-        }
-
-        public char[] ArregloLetras
-        {
-            get { return this.iArregloLetras; }
-            set { this.iArregloLetras = value; }
-        }
-
-        public char[] Letras(string pCadena)
-        {
-            return pCadena.ToCharArray();
-        }
     }
 }
