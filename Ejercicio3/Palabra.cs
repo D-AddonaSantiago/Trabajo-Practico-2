@@ -22,7 +22,7 @@ namespace Ejercicio3
         public int ID
         {
             get { return this.iID; }
-            set { this.iID = value; }
+          //  set { this.iID = value; }
         }
 
         public string Cadena
