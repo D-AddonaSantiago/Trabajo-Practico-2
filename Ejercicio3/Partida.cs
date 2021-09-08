@@ -10,7 +10,7 @@ namespace Ejercicio3
     {
         private int iID, iError, iVida;
         private DateTime iFechaInicio;
-        private DateTime iHoraFin;
+        private DateTime? iHoraFin;
         private Palabra iPalabra;
         private Jugador ijugador;
 
