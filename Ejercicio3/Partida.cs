@@ -11,17 +11,11 @@ namespace Ejercicio3
         private int iError, iVida;
         private DateTime iFechaInicio;
         private DateTime? iHoraFin;
-        private Palabra iPalabra;
+        private string iPalabra;
         private Jugador ijugador;
+        private bool iGano;
 
-        public Partida(Palabra pPalabra, Jugador pJugador)
-        {
-
-            new Partida(pPalabra, pJugador, 10); 
-
-        }
-
-        public Partida(Palabra pPalabra, Jugador pJugador, int pVida)
+        public Partida(string pPalabra, Jugador pJugador, int pVida)
         {
             this.iFechaInicio = DateTime.Now;
             this.ijugador = pJugador;
@@ -29,21 +23,14 @@ namespace Ejercicio3
             this.iVida = pVida;
             this.iError = 0;
             this.iHoraFin = DateTime.Now;
+            this.iGano = false;
         }
 
-        public bool Resultado()
+        public bool Gano
         {
-            if (iError == iVida)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            get { return this.iGano; }
+            set { this.iGano = value; }
         }
-
-   
 
         public int Errores
         {
@@ -56,11 +43,5 @@ namespace Ejercicio3
             get { return (DateTime)this.iHoraFin; }
             set { this.iHoraFin = value; }
         }
-
-        public double Duracion()
-        {
-            return ((DateTime)this.iHoraFin - this.iFechaInicio).TotalSeconds;
-        }
-
     }
 }
