@@ -10,9 +10,15 @@ namespace Ejercicio3
     {
         int iVida = 10;
 
+        char[] vectorLetras, vectorVisual;
+
+        Partida partidaActual;
+
         public void InciarPartida(Jugador pJugador)
         {
-            Partida partidaActual = new Partida(DevuelvePalabraAleatoria(), pJugador, Vida);
+            partidaActual = new Partida(DevuelvePalabraAleatoria(), pJugador, Vida);
+            vectorLetras = partidaActual.Palabra.ToCharArray();
+            CrearVectorVisual(vectorLetras.Length);
         } 
 
         public int Vida
@@ -21,7 +27,53 @@ namespace Ejercicio3
             set { this.iVida = value; }
         }
 
+        public bool ComprobarLetra(char pLetra)
+        {
+            bool temp = false;
+            for (int i = 0; i < vectorLetras.Length; i++)
+            {
+                if (vectorLetras[i] == pLetra)
+                {
+                    vectorLetras[i] = '_';
+                    vectorVisual[i] = pLetra;
+                    temp = true;
+                }
+            }
+            if (temp)
+            {
+                return true;
+            }
+            else
+            {
+                partidaActual.Errores++;
+                return false;
+            }
+        }
 
+        public bool SinVidas()
+        {
+            return (iVida == partidaActual.Errores) ? true: false;
+        }
+
+        public bool Victoria()
+        {
+            bool temp = true;
+            foreach (char i in vectorLetras)
+            {
+                if (i != '+')
+                    temp = false;
+            }
+            return (temp) ? true : false;
+        }
+
+        public void CrearVectorVisual(int pTamaño)
+        {
+            vectorVisual = new char[pTamaño];
+            for (int i = 0; i < pTamaño; i++)
+            {
+                vectorVisual[i] = '_';
+            }
+        }
 
         public string DevuelvePalabraAleatoria()
         {

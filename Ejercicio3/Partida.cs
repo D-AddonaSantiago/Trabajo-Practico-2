@@ -26,6 +26,11 @@ namespace Ejercicio3
             this.iGano = false;
         }
 
+        public string Palabra
+        {
+            get { return this.iPalabra; }
+        }
+
         public bool Gano
         {
             get { return this.iGano; }
