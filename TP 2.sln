@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio3", "Ejercicio3\Ej
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2_Test", "Ejercicio2_Test\Ejercicio2_Test.csproj", "{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoAhorcado", "..\..\..\..\..\..\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado.csproj", "{5B686D09-12B7-4853-9D11-5BD03372C038}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoAhorcado", "..\..\..\..\..\..\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado.csproj", "{6D2D8FA0-5607-420A-9626-FD311873A823}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B686D09-12B7-4853-9D11-5BD03372C038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B686D09-12B7-4853-9D11-5BD03372C038}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B686D09-12B7-4853-9D11-5BD03372C038}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B686D09-12B7-4853-9D11-5BD03372C038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2D8FA0-5607-420A-9626-FD311873A823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2D8FA0-5607-420A-9626-FD311873A823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2D8FA0-5607-420A-9626-FD311873A823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2D8FA0-5607-420A-9626-FD311873A823}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
