@@ -7,8 +7,8 @@ namespace Ejercicio3
     {
         static void Main(string[] args)
         {
-            try
-            {
+            /*try
+            {*/
                 char condicion;
                 do
                 {
@@ -24,7 +24,7 @@ namespace Ejercicio3
                     switch (condicion)
                     {
                         case '1':
-                            Partida_Pantalla.PantallaJugando();
+                            Partida_Pantalla.PantallaInicioPartida();
                             break;
                         case '2':
                             Partida_Pantalla.PantallaCambioVidas();
@@ -36,13 +36,13 @@ namespace Ejercicio3
                             break;
                     }
                 } while (condicion != 0);
-            }
-            catch (ArgumentException)
+            //}
+           /* catch (ArgumentException)
             {
                 Console.Clear();
                 Console.WriteLine("Error en el tipo de dato");
                 Console.ReadKey();
-            }
+            }*/
         }
     }
 }

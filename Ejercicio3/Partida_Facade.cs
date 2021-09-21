@@ -10,32 +10,57 @@ namespace Ejercicio3
     {
         int iVida = 10;
 
-        char[] vectorLetras, vectorVisual;
+        char[] ivectorLetras, ivectorVisual;
 
-        Partida partidaActual;
+        Partida ipartidaActual;
 
-        public void InciarPartida(Jugador pJugador)
+        Jugador ijugadorActual;
+
+        Partidas_Lista iListaPartidas = new Partidas_Lista();
+
+
+        public void NuevoJugador(string pJugador)
         {
-            partidaActual = new Partida(DevuelvePalabraAleatoria(), pJugador, Vida);
-            vectorLetras = partidaActual.Palabra.ToCharArray();
-            CrearVectorVisual(vectorLetras.Length);
+             ijugadorActual = new Jugador(pJugador);
+        }
+
+
+        public void IniciarPartida()
+        {
+            ipartidaActual = new Partida(DevuelvePalabraAleatoria(), ijugadorActual, Vida);
+            ivectorLetras = ipartidaActual.Palabra.ToCharArray();
+            CrearVectorVisual(ivectorLetras.Length);
         } 
+
+
+        public char[] VectorVisual
+        {
+            get { return this.ivectorVisual; }
+        }
+
+
+        public void AumentaVida()
+        {
+            iVida++;
+        }
+
 
         public int Vida
         {
             get { return iVida; }
-            set { this.iVida = value; }
+            set { iVida = value; }
         }
+
 
         public bool ComprobarLetra(char pLetra)
         {
             bool temp = false;
-            for (int i = 0; i < vectorLetras.Length; i++)
+            for (int i = 0; i < ivectorLetras.Length; i++)
             {
-                if (vectorLetras[i] == pLetra)
+                if (ivectorLetras[i] == pLetra)
                 {
-                    vectorLetras[i] = '_';
-                    vectorVisual[i] = pLetra;
+                    ivectorLetras[i] = '+';
+                    ivectorVisual[i] = pLetra;
                     temp = true;
                 }
             }
@@ -45,41 +70,99 @@ namespace Ejercicio3
             }
             else
             {
-                partidaActual.Errores++;
+                ipartidaActual.Errores++;
                 return false;
             }
         }
 
+
         public bool SinVidas()
         {
-            return (iVida == partidaActual.Errores) ? true: false;
+            return (iVida == ipartidaActual.Errores) ? true: false;
         }
+
 
         public bool Victoria()
         {
             bool temp = true;
-            foreach (char i in vectorLetras)
+            foreach (char i in ivectorLetras)
             {
                 if (i != '+')
                     temp = false;
             }
-            return (temp) ? true : false;
+            if (temp)
+            {
+                iListaPartidas.AgregarALista(ipartidaActual);
+            }
+            return temp;
         }
+
 
         public void CrearVectorVisual(int pTamaño)
         {
-            vectorVisual = new char[pTamaño];
+            ivectorVisual = new char[pTamaño];
             for (int i = 0; i < pTamaño; i++)
             {
-                vectorVisual[i] = '_';
+                ivectorVisual[i] = '_';
             }
         }
+
+
+        public int VidasRestantes()
+        {
+            return iVida - ipartidaActual.Errores;
+        }
+
+
+        public string TerminarPartidaGanada()
+        {
+            ipartidaActual.Gano = true;
+            ipartidaActual.TiempoFin();
+            return Duracion();
+        }
+
+
+        public string TerminarPartidaPerdida()
+        {
+            ipartidaActual.Gano = false;
+            ipartidaActual.TiempoFin();
+            return Duracion();
+        }
+
+
+        public double DuracionSegundos()
+        {
+            return ipartidaActual.Duracion().TotalSeconds;
+        }
+
+
+        public string Duracion()
+        {
+            TimeSpan i = ipartidaActual.Duracion();
+            return (i.Minutes + ":" + i.Seconds);
+        }
+
 
         public string DevuelvePalabraAleatoria()
         {
             Random numero = new Random();
             int numeroAleatorio = numero.Next(0, Palabra_Repository.CantPalabras());
             return Palabra_Repository.Obtener(numeroAleatorio);
+        }
+
+
+        public List<Partida> DevolverMejoresCincoPartidas()
+        {
+            List<Partida> temp = new List<Partida>();
+            if (iListaPartidas.ListaPartidas.Count >= 5)
+            {
+                temp = iListaPartidas.ListaPartidas.GetRange(0, 5);
+            }
+            else
+            {
+                temp = iListaPartidas.ListaPartidas.GetRange(0, iListaPartidas.ListaPartidas.Count);
+            }
+            return temp;
         }
     }
 }
