@@ -9,17 +9,15 @@ namespace Ejercicio3
     class Palabra_Repository
     {
         static Palabra nPalabra = new Palabra();
+
         static public string Obtener(int pPos)
         {
-            return nPalabra.BaseDeDatos[pPos];
+            return nPalabra.GetBaseDeDatos[pPos];
         }
 
         static public int CantPalabras()
         {
-            return nPalabra.BaseDeDatos.Length;
+            return nPalabra.GetBaseDeDatos.Length;
         }
-
-
-
     }
 }
