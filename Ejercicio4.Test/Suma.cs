@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace EJ4.Test
+namespace Ejercicio4.Test
 {
     public class Suma
     {

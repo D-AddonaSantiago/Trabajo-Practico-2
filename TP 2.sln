@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2", "Ejercicio2\Ej
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio1_Test", "Ejercicio1Test\Ejercicio1_Test.csproj", "{012647BC-2748-4DAC-AEBD-B903AB30AFF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio3", "Ejercicio3\Ejercicio3.csproj", "{9EB89487-CD35-4B08-A42C-7F5BA49DB7D8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio2_Test", "Ejercicio2_Test\Ejercicio2_Test.csproj", "{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoAhorcado", "..\..\..\..\..\..\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado.csproj", "{6D2D8FA0-5607-420A-9626-FD311873A823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio3", "..\..\..\..\..\..\JuegoAhorcado\JuegoAhorcado\JuegoAhorcado\Ejercicio3.csproj", "{6D2D8FA0-5607-420A-9626-FD311873A823}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio4", "Ejercicio4\Ejercicio4.csproj", "{B9C09438-42C6-4D03-900F-C11945F2FE28}"
 EndProject
@@ -39,10 +37,6 @@ Global
 		{012647BC-2748-4DAC-AEBD-B903AB30AFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{012647BC-2748-4DAC-AEBD-B903AB30AFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{012647BC-2748-4DAC-AEBD-B903AB30AFF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EB89487-CD35-4B08-A42C-7F5BA49DB7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EB89487-CD35-4B08-A42C-7F5BA49DB7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EB89487-CD35-4B08-A42C-7F5BA49DB7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EB89487-CD35-4B08-A42C-7F5BA49DB7D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093C626C-B0AF-4FD9-B0CA-B13ADBEDF611}.Release|Any CPU.ActiveCfg = Release|Any CPU

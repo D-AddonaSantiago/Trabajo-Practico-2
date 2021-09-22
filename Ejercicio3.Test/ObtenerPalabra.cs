@@ -9,7 +9,8 @@ namespace Ejercicio3.Test
         [Fact]
         public void ObtenerPalabra1_OK()
         {
-            string laPalabra = Palabra_Repository.Obtener(0);
+            Repositorio elRepo = new Repositorio();
+            string laPalabra = elRepo.DevuelvePalabra(0);
 
             Assert.Equal("adaptacion", laPalabra);
         }
@@ -17,7 +18,8 @@ namespace Ejercicio3.Test
         [Fact]
         public void ObtenerPalabra2_OK()
         {
-            string laPalabra = Palabra_Repository.Obtener(5);
+            Repositorio elRepo = new Repositorio();
+            string laPalabra = elRepo.DevuelvePalabra(5);
 
             Assert.Equal("atrofia", laPalabra);
         }
@@ -25,7 +27,8 @@ namespace Ejercicio3.Test
         [Fact]
         public void ObtenerPalabra3_OK()
         {
-            string laPalabra = Palabra_Repository.Obtener(15);
+            Repositorio elRepo = new Repositorio();
+            string laPalabra = elRepo.DevuelvePalabra(15);
 
             Assert.NotEqual("virus", laPalabra);
         }

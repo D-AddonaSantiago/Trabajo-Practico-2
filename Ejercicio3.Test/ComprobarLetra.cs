@@ -9,8 +9,10 @@ namespace Ejercicio3.Test
         [Fact]
         public void CompruebaLetra_OK()
         {
-            Partida_Facade sarasa = new Partida_Facade();
-            sarasa.IniciarPartida();
+            FachadaPartida sarasa = new FachadaPartida();
+            Jugador elJugador = new Jugador("asd");
+
+            sarasa.IniciarPartida(elJugador, 10);
             bool a = sarasa.ComprobarLetra('a');
             bool e = sarasa.ComprobarLetra('e');
             bool i = sarasa.ComprobarLetra('i');
