@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio3
 {
-    class Partidas_Lista
+    public class Partidas_Lista
     {
         private List<Partida> iListaGanadas = new List<Partida>();
 
