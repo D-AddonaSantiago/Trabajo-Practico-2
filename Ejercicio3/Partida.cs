@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,33 +9,25 @@ namespace Ejercicio3
 {
     public class Partida
     {
-        private int iError, iVida;
-        private DateTime iHoraInicio, iHoraFin;
+        private Jugador iJugador;
         private string iPalabra;
-        private Jugador ijugador;
+        private DateTime iHoraInicio;
+        private DateTime iHoraFin;
+        private int iVida,iError;
         private bool iGano;
+        private TimeSpan duracion; //Consultar, lo hago publico
 
-        public Partida(string pPalabra, Jugador pJugador, int pVida)
+        public Partida(Jugador pJugador, string pPalabra, int pVida)
         {
-            this.iHoraInicio = DateTime.Now;
-            this.ijugador = pJugador;
+            this.iJugador = pJugador;
             this.iPalabra = pPalabra;
+            this.iHoraInicio = DateTime.Now;
+            this.iHoraFin = DateTime.Now;// no la uso, le doy un valor inicial, luego la sobre escribo 
             this.iVida = pVida;
-            this.iError = 0;
             this.iGano = false;
+            this.iError = 0;
+
         }
-
-        public string Palabra
-        {
-            get { return this.iPalabra; }
-        }
-
-
-        public void TiempoFin()
-        {
-            this.iHoraFin = DateTime.Now;
-        }
-
 
         public bool Gano
         {
@@ -42,27 +35,45 @@ namespace Ejercicio3
             set { this.iGano = value; }
         }
 
-        public int Errores
+        public int Error
         {
             get { return this.iError; }
             set { this.iError = value; }
         }
-
-        public string Jugador
+        public int Vida
         {
-            get { return this.ijugador.Nombre; }
-            private set {; }
+            get { return this.iVida; }
+            set { this.iVida = value; }
+        }
+        public string Palabra
+        {
+            get { return this.iPalabra; }
+        }
+
+        public Jugador Jugador
+        {
+            get { return this.iJugador; }
+        }
+
+        public DateTime Horafin
+        {
+            get { return this.iHoraFin; }
+            set { this.iHoraFin = value; }
+        }
+        public string DevolverDuracion()
+        {
+            //duracion = Convert.ToDateTime(this.iHoraFin - this.iHoraInicio).ToString(@"mm\m\ ss\s\ "); //Para guardar ordenado tengo que ver la forma de poder comparlos
+            //Para guardar ordenado tengo que ver la forma de poder comparlos
+            duracion = this.iHoraFin - this.iHoraInicio;
+            return duracion.ToString(@"mm\m\ ss\s\ "); //Ver
+           
         }
 
         public TimeSpan Duracion()
         {
-            return this.iHoraFin - this.iHoraInicio;
+            return duracion = this.iHoraFin - this.iHoraInicio;
         }
 
-        public string DuracionString()
-        {
-            TimeSpan i = Duracion();
-            return (i.Minutes + ":" + i.Seconds);
-        }
+
     }
 }

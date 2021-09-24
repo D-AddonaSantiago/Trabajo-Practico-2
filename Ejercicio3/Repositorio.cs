@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JuegoAhorcado
+namespace Ejercicio3
 {
-    class Repositorio
+    public class Repositorio
     {
        
 

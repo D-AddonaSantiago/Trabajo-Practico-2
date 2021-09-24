@@ -14,10 +14,11 @@ namespace Ejercicio3
         {
             this.iNombre = pNombre;
         }
-
         public string Nombre
         {
             get { return this.iNombre; }
         }
+
+
     }
 }
