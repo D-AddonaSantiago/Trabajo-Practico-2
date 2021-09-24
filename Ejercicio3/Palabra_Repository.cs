@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio3
 {
-    class Palabra_Repository
+    public class Palabra_Repository
     {
         static Palabra nPalabra = new Palabra();
 
